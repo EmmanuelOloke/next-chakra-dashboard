@@ -38,55 +38,100 @@ import LineChart from '@/components/LineChart';
 
 const Dashboard = () => {
   const [displayMore, changeDisplayMore] = useState('hide');
+  const [slideNumber, changeSlideNumber] = useState(1);
   return (
-    <Flex height="100vh" flexDirection="row" overflow="hidden" maxWidth="2000px">
+    <Flex
+      height={[null, null, '100vh']}
+      flexDirection={['column', 'column', 'row']}
+      overflow="hidden"
+      maxWidth="2000px"
+    >
       {/* Tile and Tabs Column */}
       <Flex
-        width="15%"
+        width={['100%', '100%', '10', '15%', '15%']}
         flexDirection="column"
         alignItems="center"
         backgroundColor="#020202"
         color="#FFFFFF"
       >
-        <Flex flexDirection="column" justifyContent="space-between" height="100vh">
+        <Flex flexDirection="column" justifyContent="space-between" height={[null, null, '100vh']}>
           <Flex flexDirection="column" as="nav">
-            <Heading mt={50} mb={100} fontSize="4xl" alignSelf="center" letterSpacing="tight">
+            <Heading
+              mt={50}
+              mb={[25, 50, 100]}
+              fontSize={['4xl', '4xl', '2xl', '3xl', '4xl']}
+              alignSelf="center"
+              letterSpacing="tight"
+            >
               Payday.
             </Heading>
 
-            <Flex flexDirection="column" align="flex-start" justifyContent="center">
+            <Flex
+              flexDirection={['row', 'row', 'column', 'column', 'column']}
+              align={['center', 'center', 'center', 'flex-start', 'flex-start']}
+              justifyContent="center"
+            >
               <Flex className="sidebar-items">
-                <Link>
-                  <Icon as={FiHome} fontSize="2xl" className="active-icon" />
+                <Link display={['center', 'center', 'center', 'flex-start', 'flex-start']}>
+                  <Icon
+                    display={['none', 'none', 'flex', 'flex', 'flex']}
+                    as={FiHome}
+                    fontSize="2xl"
+                    className="active-icon"
+                  />
                 </Link>
-                <Link _hover={{ textDecoration: 'none' }}>
+                <Link
+                  _hover={{ textDecoration: 'none' }}
+                  display={['flex', 'flex', 'none', 'flex', 'flex']}
+                >
                   <Text className="active">Home</Text>
                 </Link>
               </Flex>
 
               <Flex className="sidebar-items">
-                <Link>
-                  <Icon as={FiPieChart} fontSize="2xl" />
+                <Link display={['center', 'center', 'center', 'flex-start', 'flex-start']}>
+                  <Icon
+                    display={['none', 'none', 'flex', 'flex', 'flex']}
+                    as={FiPieChart}
+                    fontSize="2xl"
+                  />
                 </Link>
-                <Link _hover={{ textDecoration: 'none' }}>
+                <Link
+                  _hover={{ textDecoration: 'none' }}
+                  display={['flex', 'flex', 'none', 'flex', 'flex']}
+                >
                   <Text>Credit</Text>
                 </Link>
               </Flex>
 
               <Flex className="sidebar-items">
-                <Link>
-                  <Icon as={FiDollarSign} fontSize="2xl" />
+                <Link display={['center', 'center', 'center', 'flex-start', 'flex-start']}>
+                  <Icon
+                    display={['none', 'none', 'flex', 'flex', 'flex']}
+                    as={FiDollarSign}
+                    fontSize="2xl"
+                  />
                 </Link>
-                <Link _hover={{ textDecoration: 'none' }}>
+                <Link
+                  _hover={{ textDecoration: 'none' }}
+                  display={['flex', 'flex', 'none', 'flex', 'flex']}
+                >
                   <Text>Wallet</Text>
                 </Link>
               </Flex>
 
               <Flex className="sidebar-items">
-                <Link>
-                  <Icon as={FiBox} fontSize="2xl" />
+                <Link display={['center', 'center', 'center', 'flex-start', 'flex-start']}>
+                  <Icon
+                    display={['none', 'none', 'flex', 'flex', 'flex']}
+                    as={FiBox}
+                    fontSize="2xl"
+                  />
                 </Link>
-                <Link _hover={{ textDecoration: 'none' }}>
+                <Link
+                  _hover={{ textDecoration: 'none' }}
+                  display={['flex', 'flex', 'none', 'flex', 'flex']}
+                >
                   <Text>Services</Text>
                 </Link>
               </Flex>
@@ -101,7 +146,13 @@ const Dashboard = () => {
       </Flex>
 
       {/* Chart Column */}
-      <Flex width="55%" padding="3%" flexDirection="column" overflow="auto" minHeight="100vh">
+      <Flex
+        width={['100%', '100%', '60%', '60%', '55%']}
+        padding="3%"
+        flexDirection="column"
+        overflow="auto"
+        minHeight="100vh"
+      >
         <Heading fontWeight="normal" mb={4} letterSpacing="tight">
           Welcome Back,{' '}
           <Flex fontWeight="bold" display="inline-flex">
@@ -305,7 +356,8 @@ const Dashboard = () => {
 
       {/* Card Column */}
       <Flex
-        width="30%"
+        width={['100%', '100%', '35%']}
+        minWidth={[null, null, '300px', '300px', '400px']}
         backgroundColor="#F5F5F5"
         padding="3%"
         flexDirection="column"
@@ -343,6 +395,249 @@ const Dashboard = () => {
           </Flex>
         </Flex>
         <Heading letterSpacing="tight">My Cards</Heading>
+
+        {slideNumber === 1 && (
+          <Box
+            borderRadius="25px"
+            mt={4}
+            width="100%"
+            height="200px"
+            bgGradient="linear(to-t, #B57295, #292598)"
+          >
+            <Flex
+              padding="1em"
+              color="#FFF"
+              flexDir="column"
+              height="100%"
+              justifyContent="space-between"
+            >
+              <Flex justifyContent="space-between" width="100%" alignItems="flex-start">
+                <Flex flexDirection="column">
+                  <Text color="gray.400">Current Balance</Text>
+                  <Text fontWeight="bold" fontSize="xl">
+                    $5,750.20
+                  </Text>
+                </Flex>
+
+                <Flex alignItems="center">
+                  <Icon as={FiCreditCard} mr={2} />
+                  <Text>Rise.</Text>
+                </Flex>
+              </Flex>
+
+              <Text mb={4}>**** **** **** 1289</Text>
+
+              <Flex alignItems="flex-end" justifyContent="space-between">
+                <Flex>
+                  <Flex flexDirection="column" mr={4}>
+                    <Text transform="uppercase" fontSize="xs">
+                      Valid Through
+                    </Text>
+                    <Text fontSize="lg">12/23</Text>
+                  </Flex>
+
+                  <Flex flexDirection="column">
+                    <Text transform="uppercase" fontSize="xs">
+                      CVV
+                    </Text>
+                    <Text fontSize="lg">***</Text>
+                  </Flex>
+                </Flex>
+
+                <Icon as={FiCreditCard} />
+              </Flex>
+            </Flex>
+          </Box>
+        )}
+
+        {slideNumber === 2 && (
+          <Box
+            borderRadius="25px"
+            mt={4}
+            width="100%"
+            height="200px"
+            bgGradient="linear(to-t, yellow.300, blue.500)"
+          >
+            <Flex
+              padding="1em"
+              color="#FFF"
+              flexDir="column"
+              height="100%"
+              justifyContent="space-between"
+            >
+              <Flex justifyContent="space-between" width="100%" alignItems="flex-start">
+                <Flex flexDirection="column">
+                  <Text color="gray.400">Current Balance</Text>
+                  <Text fontWeight="bold" fontSize="xl">
+                    $350.00
+                  </Text>
+                </Flex>
+
+                <Flex alignItems="center">
+                  <Icon as={FiCreditCard} mr={2} />
+                  <Text>Rise.</Text>
+                </Flex>
+              </Flex>
+
+              <Text mb={4}>**** **** **** 8956</Text>
+
+              <Flex alignItems="flex-end" justifyContent="space-between">
+                <Flex>
+                  <Flex flexDirection="column" mr={4}>
+                    <Text transform="uppercase" fontSize="xs">
+                      Valid Through
+                    </Text>
+                    <Text fontSize="lg">9/24</Text>
+                  </Flex>
+
+                  <Flex flexDirection="column">
+                    <Text transform="uppercase" fontSize="xs">
+                      CVV
+                    </Text>
+                    <Text fontSize="lg">***</Text>
+                  </Flex>
+                </Flex>
+
+                <Icon as={FiCreditCard} />
+              </Flex>
+            </Flex>
+          </Box>
+        )}
+
+        {slideNumber === 3 && (
+          <Box
+            borderRadius="25px"
+            mt={4}
+            width="100%"
+            height="200px"
+            bgGradient="linear(to-t, orange.300, pink.600)"
+          >
+            <Flex
+              padding="1em"
+              color="#FFF"
+              flexDir="column"
+              height="100%"
+              justifyContent="space-between"
+            >
+              <Flex justifyContent="space-between" width="100%" alignItems="flex-start">
+                <Flex flexDirection="column">
+                  <Text color="gray.400">Current Balance</Text>
+                  <Text fontWeight="bold" fontSize="xl">
+                    $10,000.00
+                  </Text>
+                </Flex>
+
+                <Flex alignItems="center">
+                  <Icon as={FiCreditCard} mr={2} />
+                  <Text>Rise.</Text>
+                </Flex>
+              </Flex>
+
+              <Text mb={4}>**** **** **** 2424</Text>
+
+              <Flex alignItems="flex-end" justifyContent="space-between">
+                <Flex>
+                  <Flex flexDirection="column" mr={4}>
+                    <Text transform="uppercase" fontSize="xs">
+                      Valid Through
+                    </Text>
+                    <Text fontSize="lg">4/25</Text>
+                  </Flex>
+
+                  <Flex flexDirection="column">
+                    <Text transform="uppercase" fontSize="xs">
+                      CVV
+                    </Text>
+                    <Text fontSize="lg">***</Text>
+                  </Flex>
+                </Flex>
+
+                <Icon as={FiCreditCard} />
+              </Flex>
+            </Flex>
+          </Box>
+        )}
+
+        <Flex justifyContent="center" mt={2}>
+          <Button
+            bgColor={slideNumber === 1 ? 'gray.600' : 'gray.400'}
+            onClick={() => changeSlideNumber(1)}
+            size="xs"
+            mx={1}
+          />
+          <Button
+            bgColor={slideNumber === 2 ? 'gray.600' : 'gray.400'}
+            onClick={() => changeSlideNumber(2)}
+            size="xs"
+            mx={1}
+          />
+          <Button
+            bgColor={slideNumber === 3 ? 'gray.600' : 'gray.400'}
+            onClick={() => changeSlideNumber(3)}
+            size="xs"
+            mx={1}
+          />
+        </Flex>
+
+        <Flex flexDirection="column" my={4}>
+          <Flex justifyContent="space-between" mb={2}>
+            <Text>Balance</Text>
+            <Text fontWeight="bold">$140.42</Text>
+          </Flex>
+          <Flex justifyContent="space-between" mb={2}>
+            <Text>Credit Limit</Text>
+            <Text fontWeight="bold">$150.00</Text>
+          </Flex>
+        </Flex>
+
+        <Heading letterSpacing="tight" size="md" my={4}>
+          Send money to
+        </Heading>
+
+        <Flex>
+          <AvatarGroup size="md" max={3}>
+            <Avatar src="avatar-2.jpg" />
+            <Avatar src="avatar-3.jpg" />
+            <Avatar src="avatar-4.jpg" />
+            <Avatar src="avatar-4.jpg" />
+            <Avatar src="avatar-4.jpg" />
+          </AvatarGroup>
+
+          <Avatar icon={<FiPlus />} ml={2} color="#FFF" bgColor="gray.300" />
+        </Flex>
+
+        <Text color="gray" mt={10} mb={2}>
+          Card Number
+        </Text>
+
+        <InputGroup>
+          <InputLeftElement pointerEvents="none">
+            <Icon as={FiCreditCard} color="gray.700" />
+          </InputLeftElement>
+          <Input type="number" placeholder="xxxx xxxx xxxx xxxx" />
+        </InputGroup>
+
+        <Text color="gray" mt={10} mb={2}>
+          Sum
+        </Text>
+
+        <InputGroup>
+          <InputLeftElement pointerEvents="none">
+            <Icon as={FiDollarSign} color="gray.700" />
+          </InputLeftElement>
+          <Input type="number" placeholder="130.00" />
+        </InputGroup>
+
+        <Button
+          mt={4}
+          bgColor="blackAlpha.900"
+          color="#FFF"
+          padding="7"
+          borderRadius={15}
+          _hover={{ bgColor: 'blackAlpha.800' }}
+        >
+          Send Money
+        </Button>
       </Flex>
     </Flex>
   );
