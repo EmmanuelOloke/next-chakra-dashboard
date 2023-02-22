@@ -37,6 +37,7 @@ import {
 import LineChart from '@/components/LineChart';
 
 const Dashboard = () => {
+  const [displayMore, changeDisplayMore] = useState('hide');
   return (
     <Flex height="100vh" flexDirection="row" overflow="hidden" maxWidth="2000px">
       {/* Tile and Tabs Column */}
@@ -209,8 +210,95 @@ const Dashboard = () => {
                     .00
                   </Td>
                 </Tr>
+
+                {displayMore === 'show' && (
+                  <>
+                    <Tr>
+                      <Td>
+                        <Flex alignItems="center">
+                          <Avatar name="amazon icon" size="sm" mr={2} src="amazon.jpeg" />
+                          <Flex flexDirection="column">
+                            <Heading size="sm" letterSpacing="tight">
+                              Amazon
+                            </Heading>
+                            <Text fontSize="sm" color="gray">
+                              Apr 24, 2021 at 1:40pm
+                            </Text>
+                          </Flex>
+                        </Flex>
+                      </Td>
+                      <Td>Electronic Devices</Td>
+                      <Td isNumeric>+$2</Td>
+                      <Td isNumeric>
+                        <Text fontWeight="bold" display="inline-table">
+                          -$242
+                        </Text>
+                        .00
+                      </Td>
+                    </Tr>
+
+                    <Tr>
+                      <Td>
+                        <Flex alignItems="center">
+                          <Avatar name="amazon icon" size="sm" mr={2} src="starbucks.png" />
+                          <Flex flexDirection="column">
+                            <Heading size="sm" letterSpacing="tight">
+                              Starbucks
+                            </Heading>
+                            <Text fontSize="sm" color="gray">
+                              Apr 22, 2021 at 2:43pm
+                            </Text>
+                          </Flex>
+                        </Flex>
+                      </Td>
+                      <Td>Cafe and restaurants</Td>
+                      <Td isNumeric>+$23</Td>
+                      <Td isNumeric>
+                        <Text fontWeight="bold" display="inline-table">
+                          -$32
+                        </Text>
+                        .00
+                      </Td>
+                    </Tr>
+
+                    <Tr>
+                      <Td>
+                        <Flex alignItems="center">
+                          <Avatar name="amazon icon" size="sm" mr={2} src="youtube.png" />
+                          <Flex flexDirection="column">
+                            <Heading size="sm" letterSpacing="tight">
+                              Youtube
+                            </Heading>
+                            <Text fontSize="sm" color="gray">
+                              Apr 13, 2021 at 11:23am
+                            </Text>
+                          </Flex>
+                        </Flex>
+                      </Td>
+                      <Td>Social media</Td>
+                      <Td isNumeric>+$4</Td>
+                      <Td isNumeric>
+                        <Text fontWeight="bold" display="inline-table">
+                          -$112
+                        </Text>
+                        .00
+                      </Td>
+                    </Tr>
+                  </>
+                )}
               </Tbody>
             </Table>
+          </Flex>
+
+          <Flex alignItems="center">
+            <Divider />
+            <IconButton
+              icon={displayMore === 'show' ? <FiChevronUp /> : <FiChevronDown />}
+              onClick={() => {
+                displayMore === 'hide' ? changeDisplayMore('show') : changeDisplayMore('hide');
+              }}
+            />
+            <Divider />
           </Flex>
         </Flex>
       </Flex>
