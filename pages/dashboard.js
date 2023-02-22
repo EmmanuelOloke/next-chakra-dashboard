@@ -310,7 +310,40 @@ const Dashboard = () => {
         padding="3%"
         flexDirection="column"
         overflow="auto"
-      ></Flex>
+      >
+        <Flex alignContent="center">
+          <InputGroup
+            backgroundColor="#FFF"
+            mb={4}
+            border="none"
+            borderColor="#FFF"
+            borderRadius="10px"
+            mr={2}
+          >
+            <InputLeftElement pointerEvents="none">
+              <FiSearch color="gray" />
+            </InputLeftElement>
+            <Input type="number" placeholder="Search" borderRadius="10px" />
+          </InputGroup>
+          <IconButton icon={<FiBell />} fontSize="sm" bgColor="#FFF" borderRadius="50%" p="10px" />
+          <Flex
+            width={30}
+            height={25}
+            backgroundColor="#B57295"
+            borderRadius="50%"
+            color="#FFF"
+            alignItems="center"
+            justifyContent="center"
+            ml={-3}
+            mt={-2}
+            fontSize="xs"
+            zIndex={100}
+          >
+            2
+          </Flex>
+        </Flex>
+        <Heading letterSpacing="tight">My Cards</Heading>
+      </Flex>
     </Flex>
   );
 };
