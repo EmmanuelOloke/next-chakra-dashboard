@@ -41,16 +41,19 @@ import LineChart from '@/components/LineChart';
 const Dashboard = () => {
   const [displayMore, changeDisplayMore] = useState('hide');
   const [slideNumber, changeSlideNumber] = useState(1);
+  const [tab, setTab] = useState('day');
+
   return (
     <Flex
       height={[null, null, '100vh']}
       flexDirection={['column', 'column', 'row']}
       overflow="hidden"
       maxWidth="2000px"
+      margin={{ '2xl': '0 auto' }}
     >
       {/* Tile and Tabs Column */}
       <Flex
-        width={['100%', '100%', '10', '15%', '15%']}
+        width={{ sm: '100%', md: '15%', lg: '10%', xl: '15%', '2xl': '15%' }}
         flexDirection="column"
         alignItems="center"
         backgroundColor="#020202"
@@ -58,10 +61,11 @@ const Dashboard = () => {
       >
         <Flex flexDirection="column" justifyContent="space-between" height={[null, null, '100vh']}>
           <Flex flexDirection="column" as="nav" alignItems="center">
-            <Flex mt={50} mb={[25, 50, 100]} ml={{ sm: -5 }}>
+            <Flex mt={50} mb={[25, 50, 100]} ml={{ lg: 0, xl: -5, '2xl': -5 }}>
               <Image src="payday.jpeg" alt="payday logo" width="50px" height="60px" />
               <Heading
-                fontSize={['4xl', '4xl', '2xl', '2xl', '2xl']}
+                display={{ sm: 'flex', md: 'none', lg: 'none', xl: 'flex', '2xl': 'flex' }}
+                fontSize={{ sm: 'xl', md: 'xl', lg: '2xl', xl: '2xl', '2xl': '2xl' }}
                 alignSelf="center"
                 letterSpacing="tight"
               >
@@ -70,14 +74,41 @@ const Dashboard = () => {
             </Flex>
 
             <Flex
-              flexDirection={['row', 'row', 'column', 'column', 'column']}
-              align={['center', 'center', 'center', 'flex-start', 'flex-start']}
+              flexDirection={{
+                sm: 'row',
+                md: 'column',
+                lg: 'column',
+                xl: 'column',
+                '2xl': 'column',
+              }}
+              align={{
+                sm: 'center',
+                md: 'center',
+                lg: 'center',
+                xl: 'flex-start',
+                '2xl': 'flex-start',
+              }}
               justifyContent="center"
             >
               <Flex className="sidebar-items">
-                <Link display={['center', 'center', 'center', 'flex-start', 'flex-start']}>
+                <Link
+                  display={{
+                    sm: 'center',
+                    md: 'center',
+                    lg: 'center',
+                    xl: 'flex-start',
+                    '2xl': 'flex-start',
+                  }}
+                >
                   <Icon
-                    display={['none', 'none', 'flex', 'flex', 'flex']}
+                    display={{
+                      base: 'none',
+                      sm: 'none',
+                      md: 'flex',
+                      lg: 'flex',
+                      xl: 'flex',
+                      '2xl': 'flex',
+                    }}
                     as={FiHome}
                     fontSize="2xl"
                     className="active-icon"
@@ -85,55 +116,88 @@ const Dashboard = () => {
                 </Link>
                 <Link
                   _hover={{ textDecoration: 'none' }}
-                  display={['flex', 'flex', 'none', 'flex', 'flex']}
+                  display={{ sm: 'flex', md: 'none', lg: 'none', xl: 'flex', '2xl': 'flex' }}
                 >
                   <Text className="active">Home</Text>
                 </Link>
               </Flex>
 
               <Flex className="sidebar-items">
-                <Link display={['center', 'center', 'center', 'flex-start', 'flex-start']}>
+                <Link
+                  display={{
+                    sm: 'center',
+                    md: 'center',
+                    lg: 'center',
+                    xl: 'flex-start',
+                    '2xl': 'flex-start',
+                  }}
+                >
                   <Icon
-                    display={['none', 'none', 'flex', 'flex', 'flex']}
+                    display={{
+                      base: 'none',
+                      sm: 'none',
+                      md: 'flex',
+                      lg: 'flex',
+                      xl: 'flex',
+                      '2xl': 'flex',
+                    }}
                     as={FiPieChart}
                     fontSize="2xl"
                   />
                 </Link>
                 <Link
                   _hover={{ textDecoration: 'none' }}
-                  display={['flex', 'flex', 'none', 'flex', 'flex']}
+                  display={{ sm: 'flex', md: 'none', lg: 'none', xl: 'flex', '2xl': 'flex' }}
                 >
                   <Text>Credit</Text>
                 </Link>
               </Flex>
 
               <Flex className="sidebar-items">
-                <Link display={['center', 'center', 'center', 'flex-start', 'flex-start']}>
+                <Link
+                  display={{
+                    base: 'none',
+                    sm: 'center',
+                    md: 'center',
+                    lg: 'center',
+                    xl: 'flex-start',
+                    '2xl': 'flex-start',
+                  }}
+                >
                   <Icon
-                    display={['none', 'none', 'flex', 'flex', 'flex']}
+                    display={{ sm: 'none', md: 'flex', lg: 'flex', xl: 'flex', '2xl': 'flex' }}
                     as={FiDollarSign}
                     fontSize="2xl"
                   />
                 </Link>
                 <Link
                   _hover={{ textDecoration: 'none' }}
-                  display={['flex', 'flex', 'none', 'flex', 'flex']}
+                  display={{ sm: 'flex', md: 'none', lg: 'none', xl: 'flex', '2xl': 'flex' }}
                 >
                   <Text>Wallet</Text>
                 </Link>
               </Flex>
 
               <Flex className="sidebar-items">
-                <Link display={['center', 'center', 'center', 'flex-start', 'flex-start']}>
+                <Link
+                  display={{
+                    base: 'none',
+                    sm: 'center',
+                    md: 'center',
+                    lg: 'center',
+                    xl: 'flex-start',
+                    '2xl': 'flex-start',
+                  }}
+                >
                   <Icon
-                    display={['none', 'none', 'flex', 'flex', 'flex']}
+                    display={{ sm: 'none', md: 'flex', lg: 'flex', xl: 'flex', '2xl': 'flex' }}
                     as={FiBox}
                     fontSize="2xl"
                   />
                 </Link>
                 <Link
                   _hover={{ textDecoration: 'none' }}
-                  display={['flex', 'flex', 'none', 'flex', 'flex']}
+                  display={{ sm: 'flex', md: 'none', lg: 'none', xl: 'flex', '2xl': 'flex' }}
                 >
                   <Text>Services</Text>
                 </Link>
@@ -150,7 +214,7 @@ const Dashboard = () => {
 
       {/* Chart Column */}
       <Flex
-        width={['100%', '100%', '60%', '60%', '55%']}
+        width={{ sm: '100%', md: '50%', lg: '60%', xl: '60%', '2xl': '70%' }}
         padding="3%"
         flexDirection="column"
         overflow="auto"
@@ -162,13 +226,63 @@ const Dashboard = () => {
             Favour
           </Flex>
         </Heading>
-        <Text color="gray" fontSize="sm">
-          My Balance
-        </Text>
-        <Text fontWeight="bold" fontSize="2xl">
-          $16,100.20
-        </Text>
+
+        <Flex justifyContent="space-between" align="center">
+          <Flex flexDirection="column">
+            <Text color="gray" fontSize="sm">
+              My Balance
+            </Text>
+            <Text fontWeight="bold" fontSize="2xl">
+              $16,100.20
+            </Text>
+          </Flex>
+
+          <Flex gap={3} fontWeight="medium" fontSize="5px">
+            <Button
+              fontSize="sm"
+              onClick={() => setTab('day')}
+              borderRadius="lg"
+              bgColor={tab === 'day' ? '#000' : 'gray.100'}
+              color={tab === 'day' ? '#FFF' : '#000'}
+              _hover={tab === 'day' ? { color: 'gray.100' } : { color: '#000' }}
+            >
+              Day
+            </Button>
+            <Button
+              fontSize="sm"
+              onClick={() => setTab('week')}
+              borderRadius="lg"
+              bgColor={tab === 'week' ? '#000' : 'gray.100'}
+              color={tab === 'week' ? '#FFF' : '#000'}
+              _hover={tab === 'week' ? { color: 'gray.100' } : { color: '#000' }}
+            >
+              Week
+            </Button>
+            <Button
+              fontSize="sm"
+              onClick={() => setTab('month')}
+              borderRadius="lg"
+              bgColor={tab === 'month' ? '#000' : 'gray.100'}
+              color={tab === 'month' ? '#FFF' : '#000'}
+              _hover={tab === 'month' ? { color: 'gray.100' } : { color: '#000' }}
+            >
+              Month
+            </Button>
+            <Button
+              fontSize="sm"
+              onClick={() => setTab('year')}
+              borderRadius="lg"
+              bgColor={tab === 'year' ? '#000' : 'gray.100'}
+              color={tab === 'year' ? '#FFF' : '#000'}
+              _hover={tab === 'year' ? { color: 'gray.100' } : { color: '#000' }}
+            >
+              Year
+            </Button>
+          </Flex>
+        </Flex>
+
         <LineChart />
+
         <Flex justifyContent="space-between" mt={8}>
           <Flex alignItems="flex-end">
             <Heading as="h2" size="lg" letterSpacing="tight">
@@ -359,8 +473,8 @@ const Dashboard = () => {
 
       {/* Card Column */}
       <Flex
-        width={['100%', '100%', '35%']}
-        minWidth={[null, null, '300px', '300px', '400px']}
+        width={{ sm: '100%', md: '40%', '2xl': '35%' }}
+        minWidth={{ sm: null, md: null, lg: '300px', xl: '300px', '2xl': '400px' }}
         backgroundColor="#F5F5F5"
         padding="3%"
         flexDirection="column"
