@@ -20,6 +20,7 @@ import {
   Input,
   InputGroup,
   InputLeftElement,
+  Image,
 } from '@chakra-ui/react';
 import {
   FiHome,
@@ -31,6 +32,7 @@ import {
   FiChevronUp,
   FiPlus,
   FiCreditCard,
+  FiWifi,
   FiSearch,
   FiBell,
 } from 'react-icons/fi';
@@ -55,16 +57,17 @@ const Dashboard = () => {
         color="#FFFFFF"
       >
         <Flex flexDirection="column" justifyContent="space-between" height={[null, null, '100vh']}>
-          <Flex flexDirection="column" as="nav">
-            <Heading
-              mt={50}
-              mb={[25, 50, 100]}
-              fontSize={['4xl', '4xl', '2xl', '3xl', '4xl']}
-              alignSelf="center"
-              letterSpacing="tight"
-            >
-              Payday.
-            </Heading>
+          <Flex flexDirection="column" as="nav" alignItems="center">
+            <Flex mt={50} mb={[25, 50, 100]} ml={{ sm: -5 }}>
+              <Image src="payday.jpeg" alt="payday logo" width="50px" height="60px" />
+              <Heading
+                fontSize={['4xl', '4xl', '2xl', '2xl', '2xl']}
+                alignSelf="center"
+                letterSpacing="tight"
+              >
+                Payday
+              </Heading>
+            </Flex>
 
             <Flex
               flexDirection={['row', 'row', 'column', 'column', 'column']}
@@ -163,7 +166,7 @@ const Dashboard = () => {
           My Balance
         </Text>
         <Text fontWeight="bold" fontSize="2xl">
-          $5,750.20
+          $16,100.20
         </Text>
         <LineChart />
         <Flex justifyContent="space-between" mt={8}>
@@ -172,7 +175,7 @@ const Dashboard = () => {
               Transactions
             </Heading>
             <Text fontSize="sm" color="gray" ml={4}>
-              Apr 2021
+              Apr 2022
             </Text>
           </Flex>
           <IconButton icon={<FiCalendar />} />
@@ -199,7 +202,7 @@ const Dashboard = () => {
                           Amazon
                         </Heading>
                         <Text fontSize="sm" color="gray">
-                          Apr 24, 2021 at 1:40pm
+                          Apr 24, 2022 at 1:40pm
                         </Text>
                       </Flex>
                     </Flex>
@@ -223,7 +226,7 @@ const Dashboard = () => {
                           Starbucks
                         </Heading>
                         <Text fontSize="sm" color="gray">
-                          Apr 22, 2021 at 2:43pm
+                          Apr 22, 2022 at 2:43pm
                         </Text>
                       </Flex>
                     </Flex>
@@ -247,7 +250,7 @@ const Dashboard = () => {
                           Youtube
                         </Heading>
                         <Text fontSize="sm" color="gray">
-                          Apr 13, 2021 at 11:23am
+                          Apr 13, 2022 at 11:23am
                         </Text>
                       </Flex>
                     </Flex>
@@ -273,7 +276,7 @@ const Dashboard = () => {
                               Amazon
                             </Heading>
                             <Text fontSize="sm" color="gray">
-                              Apr 24, 2021 at 1:40pm
+                              Apr 24, 2022 at 1:40pm
                             </Text>
                           </Flex>
                         </Flex>
@@ -297,7 +300,7 @@ const Dashboard = () => {
                               Starbucks
                             </Heading>
                             <Text fontSize="sm" color="gray">
-                              Apr 22, 2021 at 2:43pm
+                              Apr 22, 2022 at 2:43pm
                             </Text>
                           </Flex>
                         </Flex>
@@ -321,7 +324,7 @@ const Dashboard = () => {
                               Youtube
                             </Heading>
                             <Text fontSize="sm" color="gray">
-                              Apr 13, 2021 at 11:23am
+                              Apr 13, 2022 at 11:23am
                             </Text>
                           </Flex>
                         </Flex>
@@ -420,8 +423,8 @@ const Dashboard = () => {
                 </Flex>
 
                 <Flex alignItems="center">
-                  <Icon as={FiCreditCard} mr={2} />
-                  <Text>Rise.</Text>
+                  <Icon as={FiWifi} mr={2} transform="rotate(90deg)" fontSize="2xl" />
+                  <Text>Payday</Text>
                 </Flex>
               </Flex>
 
@@ -444,7 +447,7 @@ const Dashboard = () => {
                   </Flex>
                 </Flex>
 
-                <Icon as={FiCreditCard} />
+                <Image src="mastercard.png" alt="mastercard logo" width="70px" height="50px" />
               </Flex>
             </Flex>
           </Box>
@@ -474,8 +477,8 @@ const Dashboard = () => {
                 </Flex>
 
                 <Flex alignItems="center">
-                  <Icon as={FiCreditCard} mr={2} />
-                  <Text>Rise.</Text>
+                  <Icon as={FiWifi} mr={2} transform="rotate(90deg)" fontSize="2xl" />
+                  <Text>Payday</Text>
                 </Flex>
               </Flex>
 
@@ -498,7 +501,7 @@ const Dashboard = () => {
                   </Flex>
                 </Flex>
 
-                <Icon as={FiCreditCard} />
+                <Image src="visa.png" alt="mastercard logo" width="70px" height="30px" />
               </Flex>
             </Flex>
           </Box>
@@ -528,8 +531,8 @@ const Dashboard = () => {
                 </Flex>
 
                 <Flex alignItems="center">
-                  <Icon as={FiCreditCard} mr={2} />
-                  <Text>Rise.</Text>
+                  <Icon as={FiWifi} mr={2} transform="rotate(90deg)" fontSize="2xl" />
+                  <Text>Payday</Text>
                 </Flex>
               </Flex>
 
@@ -552,7 +555,7 @@ const Dashboard = () => {
                   </Flex>
                 </Flex>
 
-                <Icon as={FiCreditCard} />
+                <Image src="stripe.png" alt="mastercard logo" width="70px" height="40px" />
               </Flex>
             </Flex>
           </Box>
