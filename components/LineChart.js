@@ -52,7 +52,6 @@ const options = {
       grid: {
         borderDash: [3, 3],
       },
-      // beginAtZero: true, // this works
     },
   },
   plugins: {
