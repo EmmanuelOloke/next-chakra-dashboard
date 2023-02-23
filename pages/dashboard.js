@@ -563,18 +563,21 @@ const Dashboard = () => {
 
         <Flex justifyContent="center" mt={2}>
           <Button
+            rounded="2xl"
             bgColor={slideNumber === 1 ? 'gray.600' : 'gray.400'}
             onClick={() => changeSlideNumber(1)}
             size="xs"
             mx={1}
           />
           <Button
+            rounded="2xl"
             bgColor={slideNumber === 2 ? 'gray.600' : 'gray.400'}
             onClick={() => changeSlideNumber(2)}
             size="xs"
             mx={1}
           />
           <Button
+            rounded="2xl"
             bgColor={slideNumber === 3 ? 'gray.600' : 'gray.400'}
             onClick={() => changeSlideNumber(3)}
             size="xs"
