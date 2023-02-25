@@ -2,7 +2,7 @@
 
 Built using:
 
-| Name                  | Version | Docs/GitHub/Website                                     |
+| Name                  | Version | Website/Documentation                                   |
 | --------------------- | ------- | ------------------------------------------------------- |
 | Chakra UI             | 2.5.1   | https://chakra-ui.com/                                  |
 | ChartJS               | 4.2.1   | https://www.chartjs.org/docs/master/                    |
