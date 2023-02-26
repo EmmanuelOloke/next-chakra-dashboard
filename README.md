@@ -4,7 +4,7 @@ Built using:
 
 | Name                  | Version | Website/Documentation                                   |
 | --------------------- | ------- | ------------------------------------------------------- |
-| Chakra UI             | 2.5.1   | https://chakra-ui.com/                                  |
+| Chakra-UI             | 2.5.1   | https://chakra-ui.com/                                  |
 | ChartJS               | 4.2.1   | https://www.chartjs.org/docs/master/                    |
 | React Icons (Feather) | 4.7.1   | https://react-icons.github.io/react-icons/icons?name=fi |
 | Next.js               | 13.1.6  | https://nextjs.org/docs/getting-started                 |
@@ -12,7 +12,7 @@ Built using:
 
 The design: https://dribbble.com/shots/15640240-The-Rise-dashboard-activity
 
-## Result
+# Result
 
 ## ![Design preview for the REST Countries API app coding challenge](./public/preview.png)
 
