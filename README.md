@@ -8,7 +8,7 @@ Built using:
 | ChartJS               | 4.2.1   | https://www.chartjs.org/docs/master/                    |
 | React Icons (Feather) | 4.7.1   | https://react-icons.github.io/react-icons/icons?name=fi |
 | Next.js               | 13.1.6  | https://nextjs.org/docs/getting-started                 |
-| React Chart 2         | 5.2.0   | http://reactchartjs.github.io/react-chartjs-2/#/        |
+| React ChartJS 2       | 5.2.0   | http://reactchartjs.github.io/react-chartjs-2/#/        |
 
 The design: https://dribbble.com/shots/15640240-The-Rise-dashboard-activity
 
