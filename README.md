@@ -14,6 +14,10 @@ The design: https://dribbble.com/shots/15640240-The-Rise-dashboard-activity
 
 # Result
 
+## Live Link
+
+[Visit Link](https://next-chakra-dashboard-one.vercel.app)
+
 ## ![Design preview for the REST Countries API app coding challenge](./public/preview.png)
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
